@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   linux-container:
-    build: .
+    build: docker
     container_name: linux_env
     privileged: true
     volumes:
@@ -11,7 +11,7 @@ services:
       - internal
 
   flask-app:
-    build: ../python
+    build: python
     container_name: flask_app
     ports:
       - "8000:80"
